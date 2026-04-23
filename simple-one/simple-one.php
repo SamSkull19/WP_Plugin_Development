@@ -15,10 +15,12 @@ class WP_DEMO_HOOKS {
 
     public function require_file() {
         require_once plugin_dir_path(__FILE__) . 'includes/Add_filter.php';
+        require_once plugin_dir_path(__FILE__) . 'includes/Add_action.php';
     }
     
     public function instantiate() {
         new Add_Filter();
+        new Add_Action();
     }
 }
 
