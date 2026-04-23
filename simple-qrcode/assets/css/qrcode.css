@@ -1,0 +1,84 @@
+
+
+/* Container for the QR code */
+.simple-qrcode-container {
+    position: fixed;
+    z-index: 9999;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+/* Position: Bottom Right (default) */
+.simple-qrcode-container.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Position: Bottom Left */
+.simple-qrcode-container.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+/* Hover effect - slightly enlarge */
+.simple-qrcode-container:hover {
+    transform: scale(1.05);
+}
+
+/* Heading text styling */
+.simple-qrcode-heading {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* The QR code itself */
+.simple-qrcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive design for mobile devices */
+@media screen and (max-width: 768px) {
+    .simple-qrcode-container {
+        padding: 10px;
+    }
+    
+    .simple-qrcode-container.bottom-right {
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .simple-qrcode-container.bottom-left {
+        left: 10px;
+        bottom: 10px;
+    }
+    
+    .simple-qrcode-heading {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+}
+
+/* Animation when QR code appears */
+@keyframes qrcode-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.simple-qrcode-container {
+    animation: qrcode-fade-in 0.5s ease-out;
+}

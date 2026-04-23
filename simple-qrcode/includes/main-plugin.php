@@ -4,7 +4,7 @@ class Simple_QR_Code_Main {
     public function __construct() {
         $this->load_files();
         $this->load_classes();
-        
+
         add_action('wp_enqueue_scripts', [$this, 'frontend_enqueue_assets']);
     }
 
@@ -17,6 +17,10 @@ class Simple_QR_Code_Main {
     }
 
     public function frontend_enqueue_assets() {
+        if (!is_singular()) {
+            return;
+        }
+        
         wp_enqueue_style(
             'simple-qr-code-style',
             SIMPLE_QR_CODE_URL . 'assets/css/qrcode.css',
