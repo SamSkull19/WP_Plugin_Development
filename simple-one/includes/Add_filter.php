@@ -7,6 +7,7 @@ class Add_Filter {
         add_filter("the_author", [$this, "author_change"]);
         // add_filter("the_title", [$this, "color_change"]);
         add_filter("the_title", [$this, "color_change_for_a_specific_post"]);
+        add_filter("the_content", [$this, "word_count"]);
     }
 
     public function content_change($content) {
@@ -45,5 +46,19 @@ class Add_Filter {
         $color = (get_the_ID() == 6) ? 'blue' : 'red';
 
         return "<span style='color:$color'>" . strtoupper($title) . "</span>";
+    }
+    
+    public function word_count($content) {
+        if (!is_single() && !is_archive()) {
+            return $content;
+        }
+
+        $total_word_num = str_word_count(strip_tags($content));
+        $word_per_min = 150;
+        $total_reading_time = ceil($total_word_num / $word_per_min);
+
+        $content = "<p>Total Reading Time: {$total_reading_time} minutes</p> $content";
+        
+        return $content;
     }
 }
