@@ -1,0 +1,1 @@
+console.log(simple_qr_code_data.post_url);
