@@ -24,11 +24,15 @@ class SS_WIDGETS_MAIN {
         require_once SS_WIDGETS_PATH . 'includes/class-basic-widget.php';
         require_once SS_WIDGETS_PATH . 'includes/class-stats-widget.php';
         require_once SS_WIDGETS_PATH . 'includes/class-quick-links-widget.php';
+        require_once SS_WIDGETS_PATH . 'includes/class-basic-shortcode.php';
+        require_once SS_WIDGETS_PATH . 'includes/class-nested-shortcode.php';
     }
 
     public function instantiate() {
         new SS_WIDGETS_Dashboard();
         new SS_WIDGETS_STATS();
         new SS_WIDGETS_LINKS();
+        new SS_WIDGETS_Basic_Shortcode();
+        new SS_WIDGETS_Nested();
     }
 }
