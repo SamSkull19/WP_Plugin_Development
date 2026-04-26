@@ -23,10 +23,12 @@ class SS_WIDGETS_MAIN {
     public function load_dependencies() {
         require_once SS_WIDGETS_PATH . 'includes/class-basic-widget.php';
         require_once SS_WIDGETS_PATH . 'includes/class-stats-widget.php';
+        require_once SS_WIDGETS_PATH . 'includes/class-quick-links-widget.php';
     }
 
     public function instantiate() {
         new SS_WIDGETS_Dashboard();
         new SS_WIDGETS_STATS();
+        new SS_WIDGETS_LINKS();
     }
 }
