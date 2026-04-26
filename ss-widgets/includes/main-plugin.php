@@ -26,6 +26,7 @@ class SS_WIDGETS_MAIN {
         require_once SS_WIDGETS_PATH . 'includes/class-quick-links-widget.php';
         require_once SS_WIDGETS_PATH . 'includes/class-basic-shortcode.php';
         require_once SS_WIDGETS_PATH . 'includes/class-nested-shortcode.php';
+        require_once SS_WIDGETS_PATH . 'includes/class-button-shortcode.php';
     }
 
     public function instantiate() {
@@ -34,5 +35,6 @@ class SS_WIDGETS_MAIN {
         new SS_WIDGETS_LINKS();
         new SS_WIDGETS_Basic_Shortcode();
         new SS_WIDGETS_Nested();
+        new SS_WIDGETS_Button_Shortcode();
     }
 }
